@@ -11,7 +11,7 @@ export async function POST() {
   }
 
   const priceId = process.env.NEXT_PUBLIC_STRIPE_PRICE_ID;
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://openclaw-course-new.vercel.app";
 
   if (!priceId) {
     return NextResponse.json({ error: "Missing Stripe price id" }, { status: 500 });
