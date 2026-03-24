@@ -11,7 +11,7 @@
   "dependencies": {
     "@clerk/nextjs": "^6.16.0",
     "gray-matter": "^4.0.3",
-    "next": "15.2.3",
+    "next": "15.2.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark": "^15.0.1",
