@@ -1,0 +1,166 @@
+:root {
+  --bg: #0b1020;
+  --panel: #121933;
+  --panel-2: #1a2345;
+  --text: #eef2ff;
+  --muted: #b9c2e6;
+  --line: rgba(255,255,255,0.08);
+  --accent: #7c9cff;
+  --accent-2: #9e7bff;
+  --success: #7ee7b5;
+  --max: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #17214b 0%, var(--bg) 36%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+.container {
+  width: min(var(--max), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(11,16,32,0.72);
+  border-bottom: 1px solid var(--line);
+  z-index: 20;
+}
+
+.nav-inner, .footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.brand { font-weight: 700; letter-spacing: 0.2px; }
+.nav-links { display: flex; gap: 16px; align-items: center; color: var(--muted); }
+.nav-links a:hover { color: var(--text); }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+.button.secondary {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.button.full { width: 100%; }
+
+.hero {
+  padding: 84px 0 48px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.hero-card, .panel, .price-card, .lesson-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+}
+
+.hero-card { padding: 28px; }
+.eyebrow {
+  display: inline-block;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+h1, h2, h3 { line-height: 1.06; margin: 0 0 14px; }
+h1 { font-size: 56px; }
+h2 { font-size: 34px; }
+h3 { font-size: 22px; }
+p { color: var(--muted); line-height: 1.65; }
+
+.grid-3, .grid-2 {
+  display: grid;
+  gap: 18px;
+}
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+.section { padding: 28px 0 48px; }
+.panel { padding: 22px; }
+.list { margin: 16px 0 0; padding-left: 18px; color: var(--muted); }
+.list li { margin-bottom: 10px; }
+
+.price-card, .lesson-card { padding: 24px; }
+.price { font-size: 42px; font-weight: 800; margin: 12px 0 8px; }
+.small { font-size: 14px; color: var(--muted); }
+.badge {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(126,231,181,0.12);
+  border: 1px solid rgba(126,231,181,0.2);
+  color: var(--success);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.course-content {
+  max-width: 760px;
+  margin: 32px auto;
+  padding: 0 16px 60px;
+}
+.course-content h1, .course-content h2, .course-content h3 { margin-top: 28px; }
+.course-content p, .course-content li { color: var(--muted); line-height: 1.8; }
+.course-content code {
+  background: rgba(255,255,255,0.08);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+.course-content pre {
+  background: #0a0f21;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  overflow: auto;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  margin-top: 44px;
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.kpi { padding: 18px; border-radius: 18px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); }
+.kpi strong { display: block; font-size: 30px; margin-bottom: 6px; }
+
+@media (max-width: 900px) {
+  .hero, .grid-3, .grid-2, .kpis { grid-template-columns: 1fr; }
+  h1 { font-size: 40px; }
+  .nav-inner, .footer-inner { flex-wrap: wrap; }
+}
