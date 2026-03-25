@@ -15,9 +15,8 @@ export function Nav() {
           <Link href="/pricing">Get the Playbook</Link>
 
           <SignedOut>
-            <SignInButton mode="modal">
-              <button className="button secondary">Log in</button>
-            </SignInButton>
+             <Link href="/login" className="button secondary">
+              Log in
           </SignedOut>
 
           <SignedIn>
