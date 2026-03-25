@@ -1,4 +1,4 @@
-# OpenClaw Academy Starter
+# Operator One Starter
 
 A paid tutorial website starter built with Next.js, Clerk, Stripe, and markdown lesson pages.
 

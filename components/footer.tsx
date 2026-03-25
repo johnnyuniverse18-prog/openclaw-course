@@ -2,11 +2,19 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-inner">
+        
         <div>
-          <strong>OpenClaw Academy</strong>
-          <p className="small">A paid course starter for teaching OpenClaw with Stripe and Vercel.</p>
+          <strong>Operator One</strong>
+
+          <p style={{ opacity: 0.6, marginTop: 8 }}>
+            Build AI that actually works.
+          </p>
         </div>
-        <p className="small">Built with Next.js, Clerk, Stripe, and Markdown lessons.</p>
+
+        <p style={{ opacity: 0.5 }}>
+          © {new Date().getFullYear()} Operator One
+        </p>
+
       </div>
     </footer>
   );

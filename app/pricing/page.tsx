@@ -1,42 +1,40 @@
-import { auth } from "@clerk/nextjs/server";
-import Link from "next/link";
 import { CheckoutButton } from "@/components/checkout-button";
 
-export default async function PricingPage() {
-  const { userId } = await auth();
-
+export default function PricingPage() {
   return (
-    <main className="container section">
-      <h1>Simple pricing</h1>
-      <p>Start with one offer. It is easier to message, easier to sell, and easier to maintain.</p>
+    <main className="container page-shell" style={{ maxWidth: 900 }}>
+      <section style={{ paddingTop: 80 }}>
+        <p className="eyebrow">Pricing</p>
 
-      <div className="grid-2" style={{ marginTop: 24 }}>
-        <div className="price-card">
-          <span className="badge">Starter</span>
-          <div className="price">$29</div>
-          <p>Good for a quick launch with core lessons and gated content.</p>
-          <ul className="list">
-            <li>6 core modules</li>
-            <li>Member dashboard</li>
-            <li>Lesson updates</li>
-            <li>Download area ready for PDFs</li>
+        <h1 className="section-heading" style={{ fontSize: 48 }}>
+          One simple offer.
+        </h1>
+
+        <p style={{ color: "rgba(243,240,234,0.62)", marginTop: 16, maxWidth: 620, lineHeight: 1.8 }}>
+          A single playbook, one-time purchase, instant access.
+        </p>
+      </section>
+
+      <section style={{ marginTop: 48 }}>
+        <div className="pricing-card">
+          <p className="eyebrow">The AI Operator Playbook</p>
+
+          <h2 className="price">$19</h2>
+
+          <p className="price-sub">Instant access. No subscription.</p>
+
+          <ul className="feature-list" style={{ marginTop: 20 }}>
+            <li>Full PDF playbook</li>
+            <li>System architecture breakdown</li>
+            <li>Identity + memory design</li>
+            <li>Templates you can copy</li>
           </ul>
-          <div style={{ marginTop: 18 }}>
-            {userId ? <CheckoutButton /> : <Link href="/login" className="button full">Log in to buy</Link>}
+
+          <div style={{ marginTop: 24 }}>
+            <CheckoutButton label="Buy Now" />
           </div>
         </div>
-
-        <div className="price-card">
-          <span className="badge">Positioning note</span>
-          <h3>What to add next</h3>
-          <ul className="list">
-            <li>Video embeds for each module</li>
-            <li>Beginner PDF and troubleshooting PDF</li>
-            <li>Templates, prompts, and setup checklists</li>
-            <li>Higher tier coaching or office hours</li>
-          </ul>
-        </div>
-      </div>
+      </section>
     </main>
   );
 }

@@ -5,9 +5,9 @@ export function Nav() {
   return (
     <nav className="nav">
       <div className="container nav-inner">
-        <Link href="/" className="brand">OpenClaw Academy</Link>
+        <Link href="/" className="brand">Operator One</Link>
         <div className="nav-links">
-          <Link href="/pricing">Pricing</Link>
+          <Link href="/Playbook">Playbook</Link>
           <Link href="/dashboard">Dashboard</Link>
           <SignedOut>
             <SignInButton mode="modal">

@@ -1,22 +1,39 @@
-import type { Metadata } from "next";
-import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
+import { Inter, Cormorant_Garamond } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 
-export const metadata: Metadata = {
-  title: "OpenClaw Academy",
-  description: "A paid tutorial website starter for teaching OpenClaw."
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  weight: ["400", "500", "600"],
+});
+
+export const metadata = {
+  title: "Operator One",
+  description: "The AI Operator Playbook",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
         <body>
-          <Nav />
-          {children}
-          <Footer />
+          <div className="site-shell">
+            <Nav />
+            {children}
+            <Footer />
+          </div>
         </body>
       </html>
     </ClerkProvider>
