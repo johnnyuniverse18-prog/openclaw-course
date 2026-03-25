@@ -2,6 +2,14 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 
+export async function GET() {
+  return NextResponse.json({
+    ok: true,
+    route: "checkout",
+    message: "API route is live",
+  });
+}
+
 export async function POST() {
   try {
     const { userId } = await auth();
@@ -13,7 +21,7 @@ export async function POST() {
 
     const priceId = process.env.NEXT_PUBLIC_STRIPE_PRICE_ID;
     const appUrl =
-      process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+      process.env.NEXT_PUBLIC_APP_URL || "https://openclaw-course-new.vercel.app";
 
     if (!priceId) {
       return NextResponse.json(
