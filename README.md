@@ -125,3 +125,5 @@ order: 1
 - Add a higher-tier plan with templates or coaching
 # openclaw-course
 # openclaw-course
+
+redeploy trigger
