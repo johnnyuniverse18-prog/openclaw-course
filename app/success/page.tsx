@@ -41,8 +41,7 @@ export default function SuccessPage() {
           maxWidth: 640,
         }}
       >
-        Thanks for your purchase. You can download your PDF below.
-        If the button does not work immediately, wait a few seconds and try again.
+        Thanks for your purchase. Click below to download your PDF.
       </p>
 
       <div
