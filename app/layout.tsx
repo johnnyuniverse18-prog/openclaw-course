@@ -28,6 +28,22 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+        
+        {/* ✅ Google Ads Tracking */}
+        <head>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18052619436"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'AW-18052619436');
+              `,
+            }}
+          />
+        </head>
+
         <body>
           <div className="site-shell">
             <Nav />
